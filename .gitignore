@@ -1,0 +1,13 @@
+ Ignorar arquivos de configuração do editor
+.vscode/
+.idea/
+
+# Ignorar arquivos de compilação
+*.pyc
+__pycache__/
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos de ambiente virtual
+env/
