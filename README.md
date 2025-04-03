@@ -65,7 +65,7 @@ A API estará disponível em: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 ## Estrutura do Projeto
 ```
-📂 seu-repositorio
+📂 publications_api
 ├── 📂 routers
 │   ├── publication_router.py
 ├── 📂 services
