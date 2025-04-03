@@ -29,8 +29,8 @@ def read_publication(publication_id: int, db: Session = Depends(get_db)):
     service = PublicationService(PublicationRepository(db))
     return service.get_publication_by_id(publication_id)
 
-@router.get("/publications/author/{publication_author}", response_model=List[PublicationResponse])
-def read_publication_by_author(publication_author: str, db: Session = Depends(get_db)):
+@router.get("/publications/author/", response_model=List[PublicationResponse])
+def read_publication_by_author(publication_author: str , db: Session = Depends(get_db)):
     service = PublicationService(PublicationRepository(db))
     return service.get_publication_by_author(publication_author)
 

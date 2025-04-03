@@ -6,7 +6,7 @@ class Publication(Base):
     id = Column(Integer, primary_key=True, index=True)
     titulo = Column(String, index=True)
     autor = Column(String)
-    isbn = Column(String)
+    isbn = Column(Integer)
     paginas = Column(Integer)
     ano = Column(Integer)
 
