@@ -34,6 +34,12 @@ class PublicationRepository:
             raise PublicationNotFoundError()
         return publication
 
+    def get_by_author(self, publication_author: str) -> List[Publication]:
+        publication = self.db.query(Publication).filter(Publication.autor.like(f"%{publication_author}%")).all()
+        if not publication:
+            raise PublicationNotFoundError()
+        return publication
+
     def get_all(self) -> List[Publication]:
         return self.db.query(Publication).all()
 

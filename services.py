@@ -12,9 +12,15 @@ class PublicationService:
 
     def create_many_publications(self, publications_data: List[PublicationCreate]):
         return self.repository.create_many(publications_data)
-
-    def get_publication(self, publication_id: int):
+    
+    def get_publication_by_id(self, publication_id: int):
         publication = self.repository.get_by_id(publication_id)
+        if not publication:
+            raise HTTPException(status_code=404, detail="Publication not found")
+        return publication
+    
+    def get_publication_by_author(self, publication_author: str):
+        publication = self.repository.get_by_author(publication_author)
         if not publication:
             raise HTTPException(status_code=404, detail="Publication not found")
         return publication
